@@ -1,0 +1,11 @@
+İP 09: Gerçek Bir Blokzincir Projesini İncele
+- İncelenen Proje: Helium (HNT)
+- Çözdüğü Problem: Elektrikli scooter'lar veya kargo takip cihazları (IoT cihazları) gibi aletlerin internete bağlanması için her sokağa baz istasyonu kurmak dev şirketler için bile çok pahalıdır. Helium, sıradan insanların evlerinin pencerelerine küçük antenler (Hotspot) kurmasını sağlayarak tüm şehre yayılan, halka ait bir kablosuz ağ oluşturur.
+- Neden Blokzincir Kullanıldı?: Ortada patron konumunda dev bir telekom şirketi yoktur (DePIN mantığı). Blokzincir sistemi, kimin evindeki antenin ne kadar veri aktardığını hile yapılamayacak şekilde ölçer. Ağa kendi anteniyle destek olan kişilere, otomatik olarak sistem tarafından HNT token (kripto para) ödenir.
+- Benim Yorumum: Gerçek dünyadaki cihazların internete bağlanması sorununu büyük şirketlerin tekeline bırakmak yerine, halkın ortak katılımıyla ve blokzincir ödül sistemiyle çözmesi çok zekice bir yaklaşım.
+
+İP 10: Blokzincir Yarışması Şartnamesini İncele
+- İncelenen Şartname: Teknofest Blokzincir Yarışması Şartnamesi
+- Genel Problem: Merkezi bir otoriteye ihtiyaç duymadan, şeffaf, takip edilebilir ve akıllı sözleşme tabanlı bir sistem (dApp) tasarlamak. (Örn: Dijital kimlik veya akıllı tedarik zinciri).
+- Beklenen Çıktılar: Proje Ön Değerlendirme Raporu (PÖDR), Proje Detay Raporu (PDR) ve Sepolia gibi bir test ağında çalışan fonksiyonel akıllı sözleşme prototipi.
+- Benim Yorumum: Projenin sadece kodlanması değil, mühendislik tasarım döngüsüne uygun raporlanması isteniyor. Testnet üzerinde gerçekçi simülasyonlar yapmak projenin kalbini oluşturacak.
