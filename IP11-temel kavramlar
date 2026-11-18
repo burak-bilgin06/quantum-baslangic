@@ -1,0 +1,9 @@
+İP 11 - Temel Kavramlar
+
+* **Git:** Projedeki değişiklikleri adım adım kaydetmemizi sağlayan yerel sürüm kontrol sistemidir.
+* **GitHub:** Git ile yönettiğimiz dosyaları bulutta sakladığımız ve paylaştığımız uzak sunucudur.
+* **README:** Projenin ne olduğunu, amacını ve nasıl kullanılacağını anlatan temel vitrin ve bilgi dosyasıdır.
+* **Commit:** Koddaki bir değişikliği yerel bilgisayara kısa bir açıklama mesajıyla birlikte mühürleyip kaydetmektir.
+* **Push:** Bilgisayardaki bu kayıtları (commitleri) GitHub'daki uzak depoya yükleme işlemidir.
+* **Remix IDE:** Herhangi bir program kurmadan, doğrudan tarayıcı üzerinden Solidity kodu yazıp derlememizi sağlayan çalışma ortamıdır.
+* **Solidity:** Ethereum ağında akıllı sözleşmeler (smart contracts) yazmak için kullanılan temel programlama dilidir.
