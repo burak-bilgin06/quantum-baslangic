@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- ethers.js kütüphanesi: Bizim yerimize ağır matematiği yapacak olan araç -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <style>
+        body { font-family: Arial; background: #222; color: #fff; padding: 20px; }
+        .kutu { background: #333; padding: 10px; margin-bottom: 10px; border-left: 4px solid #4CAF50; word-wrap: break-word;}
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        span { color: #81C784; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h3>İP 12: Cüzdan Dönüşüm Laboratuvarı</h3>
+    <button onclick="cuzdanUret()">Cüzdan Üret</button>
+
+    <div id="sonuclar" style="display:none; margin-top: 15px;">
+        <div class="kutu">1. Entropi (128-bit): <br><span id="lblEntropi"></span></div>
+        <div class="kutu">2. 12 Kelime (BIP39): <br><span id="lblKelime"></span></div>
+        <div class="kutu">3. Tohum (Seed): <br><span id="lblTohum"></span></div>
+        <div class="kutu">4. Türetme Yolu (BIP44): <br><span>m/44'/60'/0'/0/0</span></div>
+        <div class="kutu">5. Gizli Anahtar (Private Key): <br><span id="lblGizli"></span></div>
+        <div class="kutu">6. Ethereum Adresi: <br><span id="lblAdres"></span></div>
+    </div>
+
+    <script>
+        // C#'taki void cuzdanUret() metodu gibi düşün
+        function cuzdanUret() {
+            // ADIM 1: 16 byte (128-bit) kırılmaz rastgele sayı üret
+            const entropi = ethers.utils.randomBytes(16);
+            
+            // ADIM 2: O sayıyı standart 12 İngilizce kelimeye çevir
+            const kelimeler = ethers.utils.entropyToMnemonic(entropi);
+            
+            // ADIM 3: 12 kelimeden devasa bir ana "Tohum" elde et
+            const tohum = ethers.utils.mnemonicToSeed(kelimeler);
+            
+            // ADIM 4 ve 5: Tohumdan Ethereum'a özel cüzdanı türet (Yönergedeki yol)
+            const hdNode = ethers.utils.HDNode.fromSeed(tohum);
+            const cuzdan = hdNode.derivePath("m/44'/60'/0'/0/0");
+            
+            // ADIM 6: Ekrandaki etiketlere (Label) sonuçları yazdır
+            document.getElementById("lblEntropi").innerText = ethers.utils.hexlify(entropi);
+            document.getElementById("lblKelime").innerText = kelimeler;
+            document.getElementById("lblTohum").innerText = tohum;
+            document.getElementById("lblGizli").innerText = cuzdan.privateKey;
+            document.getElementById("lblAdres").innerText = cuzdan.address;
+            
+            // Gizli olan sonuç panelini görünür yap
+            document.getElementById("sonuclar").style.display = "block";
+        }
+    </script>
+</body>
+</html>
