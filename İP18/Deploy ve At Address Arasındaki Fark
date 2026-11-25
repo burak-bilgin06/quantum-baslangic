@@ -1,0 +1,3 @@
+Deploy (Ağa Yükleme): Yazılan akıllı sözleşme kodunun derlenip (Bytecode haline getirilip) blokzincir ağına ilk kez gönderilmesi işlemidir. Bu işlem sonucunda ağda, içi tamamen boş yeni bir veritabanı (sözleşme) oluşturulur ve bu sözleşmeye benzersiz yeni bir adres atanır. Yeni bir alan tahsis edildiği için ağa gas ücreti ödenmek zorundadır.
+
+At Address / Add Contract (Adresten Çağırma): Daha önceden blokzincire "Deploy" edilmiş ve adresi belli olan mevcut bir akıllı sözleşmeye arayüz üzerinden bağlanma işlemidir. Bu işlem ağda yeni bir sözleşme yaratmaz veya veritabanını sıfırlamaz; sadece o adreste var olan sözleşmenin mevcut verilerini ve fonksiyonlarını okuyup etkileşime girmemizi sağlar. Ağa yeni bir kayıt eklenmediği için bu arayüz bağlantısı işlemi ücretsizdir.
