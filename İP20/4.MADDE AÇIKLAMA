@@ -1,0 +1,1 @@
+Veri nerede tutuluyor ve msg.sender görevi nedir? Veriler blokzincirin kalıcı depolama alanında (storage) tanımlı takmaAdlar adlı mapping yapısında tutulur. msg.sender, fonksiyonu çağıran cüzdanın adresini otomatik olarak alır; böylece her kullanıcı yalnızca kendi adresi adına kayıt yapabilir.
