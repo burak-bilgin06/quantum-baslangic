@@ -7,6 +7,6 @@
 İP 10: Blokzincir Yarışması Şartnamesini İncele
 - İncelenen Şartname: Teknofest Blokzincir Yarışması Şartnamesi
 - Genel Problem: Merkezi bir otoriteye ihtiyaç duymadan, şeffaf, takip edilebilir ve akıllı sözleşme tabanlı bir sistem (dApp) tasarlamak. (Örn: Dijital kimlik veya akıllı tedarik zinciri).
-- Beklenen Çıktılar: Proje Ön Değerlendirme Raporu (PÖDR), Proje Detay Raporu (PDR) ve Sepolia gibi bir test ağında çalışan fonksiyonel akıllı sözleşme prototipi.
+- Beklenen Çıktılar: Proje Ön Değerlendirme Raporu (PÖDR), Proje Detay Raporu (PDR) ve Sepolia gibi bir test ağında çalışan fonksiyonel akıllı sözleşme prototipi. Değerlendirme Ölçütleri: Problemin netliği ve gerçek hayat karşılığı, blokzincir kullanımının gerekliliği, yenilikçilik, teknik mimari ve akıllı sözleşme güvenliği, ölçeklenebilirlik ile kullanıcı deneyimi (UX).
 - Benim Yorumum: Projenin sadece kodlanması değil, mühendislik tasarım döngüsüne uygun raporlanması isteniyor. Testnet üzerinde gerçekçi simülasyonlar yapmak projenin kalbini oluşturacak.
 Takımın geçmiş yarışma performansına baktığımda TEKNOFEST 2025'te hem Türkiye birinciliği hem de En İyi Ticarileşme Potansiyeli ödülü aldığını, TEKNOFEST 2026'da ise Türkiye üçüncüsü olduğunu görüyorum. Bu sonuçlar takımın sadece teorik veya deneysel fikirlerle değil; gerçek hayatta karşılığı olan, iş modeli bulunan ve uçtan uca çalışan ürün kapsamlarıyla yarıştığını gösteriyor.
