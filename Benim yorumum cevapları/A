@@ -1,0 +1,59 @@
+İP 01: Blokzincir ve Ortak Kayıt
+
+Soru: Hangi durumda normal veritabanını tercih ederdiniz?
+
+Yorumum: Eğer verileri tek bir merkezden ben yönetiyorsam, sistemin çok hızlı çalışması gerekiyorsa ve gerektiğinde kayıtları güncelleyip silebilmem şartsa (örneğin kullanıcı verisi silme talepleri gibi durumlarda) blokzincirle uğraşmam, klasik bir veritabanı tercih ederim. Katılımcılar arasında güven sorunu yoksa blokzincir gereksiz maliyet ve yavaşlık getirir.
+
+İP 02: Node ve Konsensüs
+
+Soru: Tek bir node kapanınca bütün ağın durup durmayacağı neye bağlıdır?
+
+Yorumum: Tamamen ağın ne kadar dağıtık olduğuna ve aktif çalışan diğer düğüm (node) sayısına bağlıdır. Ethereum gibi binlerce bağımsız node'un çalıştığı merkeziyetsiz bir ağda bir düğümün fişini çekmek sistemi hiç etkilemez; ancak tüm sistem tek bir sunucuya veya küçük bir gruba bağlıysa o düğüm kapandığında ağ durur.
+
+İP 03: Kriptografi ve Cüzdan
+
+Soru: Cüzdan uygulamasının silinmesiyle kurtarma bilgisinin kaybolmasını karşılaştırın.
+
+Yorumum: Bence cüzdan uygulaması (MetaMask gibi) sadece blokzincire açılan bir pencere. Uygulamayı bilgisayardan silsem bile 12 kelimelik kurtarma ifadem (mnemonic) elimde olduğu sürece başka bir cihazdan girip hesabıma aynen ulaşabilirim. Ama 12 kelimeyi kaybedersem ortada "şifremi unuttum" diyebileceğim bir müşteri hizmetleri olmadığı için o hesaptaki her şey sonsuza kadar kilitlenir.
+
+İP 04: Bitcoin, Ethereum ve Token
+
+Soru: Etkinliğe giriş hakkını temsil etmek için mutlaka token gerekir mi?
+
+Yorumum: Bence hiç gerek yok. Kendi yazdığımız EtkinlikKayit sözleşmesinde de gördüğüm gibi, sadece mapping(address => bool) kullanarak kimin kayıtlı olduğunu ve içeri girip girmediğini gayet temiz bir şekilde tutabiliyoruz. Token veya NFT ancak bu giriş hakkını başkasına devretmek ya da hatıra bileti olarak cüzdanda sergilemek istersek anlamlı olur.
+
+İP 05: Akıllı Sözleşme ve ABI
+
+Soru: Aynı kod iki farklı adrese yayınlanınca kayıtları neden ayrı olabilir?
+
+Yorumum: Çünkü her deploy işlemi blokzincir üzerinde sıfırdan yeni bir sözleşme adresi ve tamamen bağımsız bir hafıza alanı (storage) açıyor. Kod şablonu birebir aynı olsa bile her sözleşme kendi dükkanını işletiyor; sadece kendi adresine gelen işlemleri işleyip kendi değişkenlerini güncellediği için kayıtları birbirine karışmıyor.
+
+İP 06: RPC, Explorer ve Event
+
+Soru: Explorer olmadan bir kaydı kontrol etmek için hangi yolu araştırırdınız?
+
+Yorumum: Etherscan gibi bir arayüz çökse bile ağ durmadığı için doğrudan çalışan bir RPC adresine bağlanırdım. ethers.js kullanarak birkaç satırlık bir script yazar, sözleşme adresi ve ABI dosyasını tanımlayıp doğrudan düğümden (node) eth_call veya log sorgusuyla veriyi kendim okurdum.
+
+İP 07: Bir İşlemin Yolculuğu
+
+Soru: "İşlem başarısız" ile "sonucunu öğrenemedim" neden farklıdır?
+
+Yorumum: "İşlem başarısız" dediğinde ağ bana net bir cevap vermiştir; işlem bloğa girmiş ama require kuralına takıldığı veya gas yetmediği için geri çevrilmiştir (reverted). "Sonucunu öğrenemedim" ise internetim koptuğu veya RPC yanıt vermediği için işlemin akıbetini henüz bilmediğim anlamına gelir. Arka planda işlem çoktan onaylanmış olabileceği için hemen tekrar gönderirsem aynı işlemi iki kez yapma riskim doğar.
+
+İP 08: Ekosistemi Tanı
+
+Soru: Hangi alanı daha sonra öğrenmek istersiniz ve neden?
+
+Yorumum: En çok Zero-Knowledge Proof (ZK) ve Katman-2 (L2) çözümlerini derinlemesine öğrenmek isterim. Açık blokzincirlerde her verinin herkese görünür olması günlük hayatta gizlilik sınırı yaratıyor; ZK'nın veriyi açık etmeden doğruluğunu kanıtlayabilmesi ve L2'lerin işlem maliyetlerini ciddi oranda düşürmesi geleceğin uygulamaları için bana çok kritik geliyor.
+
+İP 09: Gerçek Bir Blokzincir Projesini İncele (Helium)
+
+Soru: Projenin bir güçlü tarafını ve bir sınırlamasını kendi görüşünüzle yazın.
+
+Yorumum: İncelediğim Helium projesinde en güçlü bulduğum taraf, blokzinciri sadece finansal transferler için değil, gerçek dünyadaki fiziksel kablosuz ağ (IoT ve 5G) altyapısını kurmak için bir teşvik mekanizması (DePIN) olarak kullanması. Tek bir telekom devine bağlı kalmadan insanların evlerine kurduğu hotspot cihazlarıyla kapsama alanı oluşturması ve karşılığında ödül kazanması bence çok yaratıcı bir model. Sınırlaması olarak ise başlangıçtaki donanım maliyetlerinin yüksek olmasını, aynı bölgede çok fazla cihaz biriktiğinde ödüllerin ciddi şekilde düşmesini ve token fiyatındaki dalgalanmaların cihaz sahiplerinin motivasyonunu doğrudan etkilemesini söyleyebilirim.
+
+İP 10: Blokzincir Yarışması Şartnamesini İncele
+
+Soru: Bu programda öğrendiğiniz hangi konuların yarışmada daha çok işe yarayacağını düşünüyorsunuz?
+
+Yorumum: Akıllı sözleşmelerde yetkilendirme ve güvenlik kontrolleri (require, msg.sender), olay kayıtlarının (event) izlenmesi ve ön yüz ile cüzdanı hatasız konuşturma pratiklerinin yarışmada geliştireceğimiz prototipin sağlam ve denetlenebilir olması açısından en çok işimize yarayacak konular olduğunu düşünüyorum.

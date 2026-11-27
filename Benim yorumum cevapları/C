@@ -1,0 +1,23 @@
+İP 16: Remix ile Gerçek İsmini Kaydet
+
+Soru: İsminizin sitede görünmesiyle zincirde kaydedilmiş olması aynı kontrol müdür?
+
+Yorumum: İkisi aynı kontrol değil. Zincirde kayıtlı olmak işlemin sözleşme hafızasına başarıyla işlendiğini gösterir. Kontrol sitesinde görünmek ise web arayüzünün zincirden veriyi doğru çekmesine, doğru sözleşme adresine bakmasına ve ismin sitenin format kurallarına uymasına bağlı ayrı bir arayüz katmanı kontrolüdür.
+
+İP 17: Explorer ile Kaydı Doğrula
+
+Soru: Input Data, event ve mevcut state size hangi farklı soruların cevabını verdi?
+
+Yorumum: Input Data bana "sözleşmeye tam olarak hangi fonksiyonu ve hangi veriyi gönderdim?" sorusunun cevabını, Event (Logs) "işlem sırasında geçmişte ne gerçekleşti?" bilgisini, Mevcut State (Read Contract) ise "tüm işlemlerden sonra şu an sözleşmede kayıtlı güncel durum ne?" cevabını verdi.
+
+İP 18: Takım Sözleşmesinin Kopyasını Deploy Et ve Verify Et
+
+Soru: Aynı kodun farklı adreste çalışması neden eski kayıtları otomatik taşımıyor?
+
+Yorumum: Yeni bir adrese deploy yaptığımızda sıfırdan boş bir depolama alanına sahip yeni bir sözleşme örneği oluşuyor. Kod yalnızca kuralları belirliyor; veriler sözleşmenin kendi adresine bağlı hafızada tutulduğu için yeni sözleşme ilk yayınlandığında tamamen boş başlıyor.
+
+İP 19: Etherscan Write Contract ile Kendi Sözleşmene Kaydol
+
+Soru: Aynı cüzdan takım sözleşmesine ikinci kez kaydolamazken kendi kopyanıza neden kaydolabildi?
+
+Yorumum: Takım sözleşmesi kendi hafızasına benim adresimi "kayıtlı" olarak işaretlemişti ama benim yayınladığım kopya sözleşme farklı bir adreste çalışan bağımsız bir örnek olduğu için oradaki kayitliMi tablosu bomboştu ve beni ilk kez gelen bir kullanıcı gibi kabul etti.

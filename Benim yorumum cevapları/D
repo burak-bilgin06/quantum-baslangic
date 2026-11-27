@@ -1,0 +1,23 @@
+İP 20: İlk Etkinlik Kaydını Oluştur
+
+Soru: Bu ilk sürüm hangi yanlış kullanımları henüz engellemiyor?
+
+Yorumum: İlk yazdığım basit sürümde kullanıcı hiçbir şey yazmadan (boş string ile) kayıt olabiliyordu, aynı cüzdanla tekrar işlem yapıp önceki takma adını ezebiliyordu ve içeride kaç kişi olduğuna bakılmaksızın sınırsız sayıda kayıt alınabiliyordu.
+
+İP 21: Kapasite ve Kayıt Kurallarını Ekle
+
+Soru: Adres başına sınırın gerçek kişi sayısını neden garanti etmediğini açıklayın.
+
+Yorumum: Blokzincirde cüzdan açmak için gerçek kimlik doğrulaması gerekmiyor. İsteyen tek bir kişi MetaMask üzerinden saniyeler içinde 3 farklı hesap oluşturup her biriyle ayrı ayrı kayıt yaparak 3 kişilik etkinlik kontenjanını tek başına doldurabilir.
+
+İP 22: Görevli ve Giriş Kontrolünü Ekle
+
+Soru: Arayüzde düğmeyi gizlemek yerine yetkiyi sözleşmede denetlemek neden gerekir?
+
+Yorumum: Web sayfasındaki butonu gizlemek sadece ekrandaki görüntüyü değiştirir; biraz teknik bilgisi olan biri Etherscan'deki Write Contract sekmesinden veya kendi yazdığı bir kodla fonksiyonu doğrudan tetikleyebilir. Bu yüzden gerçek güvenliği kapıdaki kilidi (require(msg.sender == gorevli)) doğrudan akıllı sözleşmenin içine yazarak sağlamamız şart.
+
+İP 23: Etkinlik Sözleşmeni Sepolia'ya Taşı
+
+Soru: Aynı projenin yerel ve Sepolia sürümlerini karıştırmamak için hangi bilgileri kontrol edersiniz?
+
+Yorumum: Önce MetaMask'te Sepolia test ağında (Chain ID: 11155111) olduğumu kontrol ederim, ardından etkileşime girdiğim Sözleşme Adresini ve deploy işleminin Transaction Hash bilgisini doğrularım. Zaten Sepolia'ya ilk yüklediğimde toplamKayitSayisi değerinin sıfırdan başlaması yerel test kayıtlarının buraya taşınmadığının en net göstergesi.

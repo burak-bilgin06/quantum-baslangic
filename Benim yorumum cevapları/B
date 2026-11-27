@@ -1,0 +1,29 @@
+İP 11: Çalışma Ortamını Hazırla
+
+Soru: Hangi araç size yeniydi? Kurulumda nasıl ilerlediniz?
+
+Yorumum: Remix IDE ve MetaMask'ın test ağlarıyla birlikte kullanımı benim için tamamen yeniydi. Resmî kaynaklardan kurulumları yaptıktan sonra yerel sanal ortam (Remix VM) ile gerçek test ağı (Sepolia) arasındaki farkı deneyerek mantığını oturttum; her adımı da Git ile sürümlendirerek ilerledim.
+
+İP 12: Kendi Cüzdan Oluşturucunu Yaz
+
+Soru: Mnemonic ile private key arasındaki farkı kendi uygulamanız üzerinden açıklayın.
+
+Yorumum: Uygulamayı geliştirirken gördüm ki 12 kelime (mnemonic) ana kasa anahtarı gibi; rastgele entropiden üretiliyor ve üzerinden türetme yoluyla (m/44'/60'/0'/0/0 vb.) bir sürü farklı hesap çıkarabiliyoruz. Private key ise bu ağaçtan türetilen tek bir hesaba ait gizli anahtar ve sadece o hesabın işlemlerini imzalamaya yarıyor.
+
+İP 13: MetaMask ile Karşılaştır ve Checksum Deneyi Yap
+
+Soru: Geçerli mnemonic ile güvenli biçimde üretilmiş mnemonic aynı iddia mıdır?
+
+Yorumum: Hayır, aynı değildir. Geçerli olması sadece BIP39 kelime listesine ve son kelimedeki checksum matematiğine uyduğunu gösterir; örneğin dokümanlardaki herkese açık örnek 12 kelime de geçerlidir ama herkes bildiği için güvenli değildir. Güvenli olması için kimsenin tahmin edemeyeceği gerçek kriptografik rastgelelikle (entropi) üretilmiş olması gerekir.
+
+İP 14: Test ETH Kaynağını Kendin Bul
+
+Soru: Adresi paylaşmak neden harcama yetkisi vermez?
+
+Yorumum: Cüzdan adresi IBAN numaramız gibi; public key'in tek yönlü özetinden (hash) üretildiği için adrese bakan biri geri gidip private key'i hesaplayamaz. Hesaptan varlık gönderebilmek için işlemin mutlaka o adrese ait gizli anahtarla dijital olarak imzalanması gerekir.
+
+İP 15: Test USDC Edin ve İki Transferi Karşılaştır
+
+Soru: USDC gönderirken ücretin hangi bakiyeden karşılandığını nasıl gördünüz?
+
+Yorumum: Test USDC gönderdiğimde transfer ettiğim miktar USDC bakiyemden düştü ama ağ işlem ücretinin (gas) USDC'den değil, doğrudan ağın ana varlığı olan SepoliaETH bakiyemden kesildiğini hem MetaMask onay ekranında hem de Etherscan işlem detaylarında net olarak gördüm.
